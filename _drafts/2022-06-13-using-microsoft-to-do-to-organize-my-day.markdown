@@ -16,6 +16,7 @@ Some of the things I do:
   - Phone calls
   - Things I read on blogs
   - Personal distractions like family, chores, etc.
+- Postpone the difficult things that require focussing (like coding) to the end and then never get to it. (while I also really like to do these, at least I think I do...)
 
 Fact is, I get distracted a lot and during the day, I usually forget about my planning.
 
