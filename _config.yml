@@ -28,15 +28,16 @@ twitter_username: MarcoJanse
 github_username:  MarcoJanse
 
 # Build settings
-theme: minima
+remote-theme: pages-themes/cayman@v0.2.0
 plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-seo-tag
+  - jekyll-remote-theme
   
 
 # Site settings
-permalink: /:title/
+permalink: /:title
 markdown: kramdown
 paginate: 5
 paginate_path: "/:num/"
