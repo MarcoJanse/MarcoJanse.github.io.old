@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Using Microsoft To Do to organize my day"
+categories: softskills working-habits
 ---
 
 ## Distractions
@@ -8,7 +9,7 @@ title:  "Using Microsoft To Do to organize my day"
 I suffer from [Imposter Syndrome](https://en.wikipedia.org/wiki/Impostor_syndrome) and I've taken a step recently to work on this by myself and the aid of a psychologist.
 During the consults with my psychologist, we realized that one of the things that makes my symptoms worse is organizing my day. I'm pretty bad at making a planning and sticking to it.
 
-[]
+![Distracted](/assets/images/reduce-distractions.jpg)
 
 Some of the things I do:
 
@@ -23,6 +24,8 @@ Some of the things I do:
 - Postpone the difficult things that require focussing (like coding) to the end and then never get to it. (while I also really like to do these, at least I think I do...)
 
 Fact is, I get distracted a lot and during the day, I usually forget about my planning.
+
+![Distractions](/assets/images/distractions.jpg)
 
 One of the things I'm trying to adopt is [Microsoft To Do](https://todo.microsoft.com/tasks/) app, which can be used for .. well, to-do-lists.
 It's very easy to use and you can sign in online using the [web application](https://todo.microsoft.com/tasks/) or download the app from the Microsoft store for Windows 10 or the iOS or Android app.
