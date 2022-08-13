@@ -28,7 +28,7 @@ twitter_username: MarcoJanse
 github_username:  MarcoJanse
 
 # Build settings
-remote-theme: pages-themes/cayman@v0.2.0
+theme: minima
 plugins:
   - jekyll-feed
   - jekyll-paginate
