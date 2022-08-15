@@ -20,3 +20,5 @@ I live in a small town in the Netherlands with my amazing wife and two lovely ki
 - [Last.Fm](https://www.last.fm/user/arcom) - I love listening to music and here you can see what I'm listening to
 - [Spotify](https://open.spotify.com/user/arcom76) - Most of my playlists can be found here.
 - [GoodReads](https://www.goodreads.com/user/show/46536999-marco-janse) - Books I've read
+- [Gûanfú-Taiji](https://guanfu-taiji.nl/) - The martial arts school that I practice tai chi and wushu (kung fu)
+- [Emancipator](https://www.emancipator.nl/) - I'm an ambassador of male emancipation and equality regardless of gender, race or religion
