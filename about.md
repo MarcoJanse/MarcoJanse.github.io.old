@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-![About Me](/assets/images/marco-simpsonized.png)
+![About Me](/assets/images/marco-simpsonized.png){:width="20%"}
 
 ## Introduction
 
@@ -12,7 +12,7 @@ My name is Marco Janse. (he/him)
 I'm a IT professional with more than 20 years of IT-experience. I have a passion for operating systems, automation, monitoring, and coding. (PowerShell in particular)
 I live in a small town in the Netherlands with my amazing wife and two lovely kids and a wonderful dog.
 
-## Things about me and my interests
+## My digital portfolio and the things I like
 
 - [LinkedIn](https://linkedin.com/in/marco-janse-publicprofile) - My resume and things I post and share profesionally.
 - [Twitter](https://twitter.com/MarcoJanse) - My Twitter profile, mostly used for following fellow IT-professionals, so no cat posts!
