@@ -6,7 +6,7 @@ categories: softskills
 
 ## Introduction
 
-When working in IT, technology is always changing and you are always struggling to keep up.
+When working in IT, technology is always changing and one is always struggling to keep up.
 Therefore, whether you are a support engineer, IT Pro, developer or DevOps engineer, you rely a lot on the internet for things you don't know, or need to learn more about.
 When answers cannot be found in the offical documentation or technology site, you rely on the community.
 
