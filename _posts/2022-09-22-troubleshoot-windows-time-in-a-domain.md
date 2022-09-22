@@ -1,4 +1,8 @@
-# Troubleshoot Windows Time in a domain
+---
+layout: post
+title:  "Troubleshoot Windows Time in a domain"
+---
+
 
 > Time is of the essence my dear
 
@@ -10,9 +14,16 @@ This article focusses on Windows Time configuration within a domain. For local s
 
 ## Background
 
-Let’s start with some background information from Microsoft Technet: Windows Time Service Tools and Settings
+Let’s start with some background information from [Micrsooft Learn: Windows Time Service Tools and Settings](https://learn.microsoft.com/en-us/windows-server/networking/windows-time-service/windows-time-service-tools-and-settings)
 
-Most domain member computers have a time client type of NT5DS, which means that they synchronize time from the domain hierarchy. The only typical exception to this is the domain controller that functions as the primary domain controller (PDC) emulator operations master of the forest root domain, which is usually configured to synchronize time with an external time source. To view the time client configuration of a computer, run the `W32tm /query /configuration` command from an elevated Command Prompt and look for the "[TimeProviders]" block and the `Type` in the command output. For more information, see [How Windows Time Service Works | Microsoft Learn](https://learn.microsoft.com/en-us/windows-server/networking/windows-time-service/How-the-Windows-Time-Service-Works). You can run the command `reg query HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Parameters` and read the value of NtpServer in the command output.
+Most domain member computers have a time client type of **NT5DS**, which means that they synchronize time from the domain hierarchy.
+The only typical exception to this is the domain controller that functions as the primary domain controller (PDC) emulator operations master of the forest root domain, which is usually configured to synchronize time with an external time source. 
+To view the time client configuration of a computer, run the `W32tm /query /configuration` command from an elevated Command Prompt and look for the "[TimeProviders]" block and the `Type` in the command output. 
+
+For more information, see [How Windows Time Service Works | Microsoft Learn](https://learn.microsoft.com/en-us/windows-server/networking/windows-time-service/How-the-Windows-Time-Service-Works). 
+You can run the command `reg query HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Parameters` and read the value of NtpServer in the command output.
+
+## How Windows Time works in a Windows domain hierarchy
 
 The following part is very important to understand:
 
@@ -123,7 +134,7 @@ Here’s a quick summary for troubleshooting time issues in your domain environm
 - Check if the firewall (Windows and/or hardware firewall) is preventing succesful time synchronisation between servers. UDP port 123 should be open between member servers and all domain controllers and between all DC’s. Also, some hardware firewalls have a default ACL to block UDP port 123.
 - If using virtual machines, make sure that your Domain Controller VM’s don’t synchronise their time from the physical host. By default, Hyper-V Virtual Machines synchronise their time from the physical host using the Hyper-V Time Synchronization Service. This should be disabled as described in the following Technet article: Running Domain Controllers in Hyper-V. For VMware, you should disable this option in VMware Tools, either from within the Guest OS, or from the Virtual Machine settings in VMware.
 
-### Useful commands
+## Useful commands
 
 And finally, here are some useful commands for troubleshooting the time service:
 
@@ -154,8 +165,8 @@ w32tm /register
 net start w32time
 ```
 
-Useful resources:
+## Useful resources
 
-- [w32tm command help | Microsoft Learn](https://learn.microsoft.com/en-us/windows-server/networking/windows-time-service/windows-time-service-tools-and-settings?source=recommendations#run-w32tmexe)
-- [What is Windows Time Service | Microsoft Learn](https://learn.microsoft.com/en-us/archive/blogs/w32time/what-is-windows-time-service)
-- [Windows Time Service Tools and Settings | Microsoft Learn](https://learn.microsoft.com/en-us/windows-server/networking/windows-time-service/windows-time-service-tools-and-settings)
+- [w32tm command help \| Microsoft Learn](https://learn.microsoft.com/en-us/windows-server/networking/windows-time-service/windows-time-service-tools-and-settings?source=recommendations#run-w32tmexe)
+- [What is Windows Time Service \| Microsoft Learn](https://learn.microsoft.com/en-us/archive/blogs/w32time/what-is-windows-time-service)
+- [Windows Time Service Tools and Settings \| Microsoft Learn](https://learn.microsoft.com/en-us/windows-server/networking/windows-time-service/windows-time-service-tools-and-settings)
