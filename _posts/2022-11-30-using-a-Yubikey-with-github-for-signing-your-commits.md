@@ -116,7 +116,7 @@ gpg --card-edit
 
 You should see your prompt change to `gpg/card>`, which means that you can now start working with your Yubikey. 
 
-- In the `gpg/card>` prompt, enter `admin` to be able to make changes
+- In the `gpg/card>` prompt, enter `admin` to be able to make changes:
 
 ```powershell
 gpg/card> admin
@@ -128,9 +128,9 @@ Once you’re in, make sure to change the PINs for the key, if you haven't done 
 gpg/card> passwd
 ```
 
-Make sure to remember these passwords or store them in a password manager. Once you're finished with changing both the PIN and Admin PIN, go back to the `gpg/card>` prompt by using 'Q' to quit the password menu
+Make sure to remember these passwords or store them in a password manager. Once you're finished with changing both the PIN and Admin PIN, go back to the `gpg/card>` prompt by using 'Q' to quit the password menu.
 
-We will now generate a private key that we will use for signing using the `generate` command
+We will now generate a private key that we will use for signing using the `generate` command:
 
 ```powershell
 generate
@@ -155,7 +155,7 @@ public and secret key created and signed.
 ```
 
 Exit the `gpg/card>` prompt by typing `q`
-This will list your key ID's, but we will list all settings on the Yubikey using the command below
+This will list your key ID's, but we will list all settings on the Yubikey using the command below:
 
 ```powershell
 gpg --card-status
@@ -164,16 +164,16 @@ gpg --card-status
 You should see configured values for the Signature key,, Encryption Key and Authentication key. Your key ID can be found at 'General key info, and will look something like this:
 
 ```bash
-General key info..: pub  rsa2048/**************** 2022-11-29 Marco Janse (YubiKey5NFS202104-2 signing key)
+General key info..: pub  rsa2048/**************** 2022-11-29 Marco Janse (YubiKey<keyname> signing key)
 ```
 
 The part after `rsa2048/` is your key ID. Make a note of that key ID as we will need that later.
 
 ### 5 Export Public key
 
-Now that we have generaed the key, we will export the public key and at it to GitHub to be able to use commit siging verification
+Now that we have generated the key, we will export the public key and at it to GitHub to be able to use commit siging verification.
 
-With the yubikey still installed enter the following command
+With the yubikey still installed enter the following command:
 
 ```bash
 gpg --armor <key ID>
@@ -181,7 +181,7 @@ gpg --armor <key ID>
 
 This will display the public key in the shell. You can copy this to a file or directly into GitHub in the next step.
 
-**Tip:** to add something to the clipboard using PowerShell
+**Tip:** to add something to the clipboard using PowerShell:
 
 ```powershell
 gpg --armor <key ID> | clip
@@ -200,31 +200,31 @@ gpg --armor <key ID> | clip
 
 From your shell configure git with the key using the following commands
 
-To set the User name (if not already done so)
+To set the User name (if not already done so):
 
 ```powershell
 git config --global user.name <user name>
 ```
 
-To set the Email address
+To set the Email address: 
 
 ```powershell
 git config --global user.email <userID>+<UserName>@users.noreply.github.com
 ```
 
-To set your signing key
+To set your signing key:
 
 ```powershell
  git config --global user.signingkey "<KEY_ID"
 ```
 
-To force signing of commits
+To force signing of commits: 
 
 ```powershell
 git config -ccccccvfgnlvckvgicgtvlvhj-global commit.gpgsign true 
 ```
 
-To set the GPG program (for Windows)
+To set the GPG program (for Windows):
 
 ```powershell
 git config --global gpg.program "c:/Program Files (x86)/GnuPG/bin/gpg.exe"
@@ -235,6 +235,21 @@ git config --global gpg.program "c:/Program Files (x86)/GnuPG/bin/gpg.exe"
 Now that everything has been configured, it's time to start testing. Commit something in Git while you have your Yubikey connected and you should get a prompt for your PIN, Once you've entered your PIN, your commit should get signed with your GPG signing key.
 
 From then on, as long as the YubiKey is plugged in, all commits will be signed. Take the YubiKey out, and commits will start failing.
+
+### 9 Make a back-up of your gnupg folder
+
+Make a back-up of your `%APPDATA%\gnupg` folder. (For me, this redirects to `C:\Users\<username>\AppData\Roaming\gnupg`) This folder holds some important files:
+
+- `\openpgp-revocs.d`
+  - This folder holds al revocation certificates
+- `private-keys-v1.d`
+  - This usually contains the actual private keys, but in this keys, it contains the stubs with references to the private keys.
+- `pubring.kbx`
+  - The public keyring
+
+These files should be backed up and can be used to overwrite the `%APPDATA%\gnupg` folder on another PC if you use your Yubikey on multiple machines or if you need to restore your configuration at some point.'
+
+More info: [Configuration Files \| gnupg.org/](https://www.gnupg.org/documentation/manuals/gnupg/GPG-Configuration.html)
 
 ## Troubleshooting
 
