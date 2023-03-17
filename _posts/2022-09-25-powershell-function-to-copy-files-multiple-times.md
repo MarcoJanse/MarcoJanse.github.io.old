@@ -9,7 +9,7 @@ categories: powershell filemanagement
 Recently, I had to test some network storage in regards to performance.
 What I wanted to do is copy some large files from local storage to remote storage and during those copy actions, I wanted to monitor network traffic using WireShark. What I did was write a PowerShell function that could easily be re-used for different scenario's. Some things this function should be able to do:
 
-- Copy the same large file multiple time to the same destionation, but give each file on the destination a different name
+- Copy the same large file multiple time to the same destination, but give each file on the destination a different name
 - Set the number of copies you want to make
 - Easily set source and destination
 - Give verbose output when required
