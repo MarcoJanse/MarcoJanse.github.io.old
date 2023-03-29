@@ -221,7 +221,7 @@ To set your signing key:
 To force signing of commits: 
 
 ```powershell
-git config -ccccccvfgnlvckvgicgtvlvhj-global commit.gpgsign true 
+git config --global commit.gpgsign true 
 ```
 
 To set the GPG program (for Windows):
