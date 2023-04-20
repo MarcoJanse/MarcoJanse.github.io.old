@@ -16,7 +16,7 @@ Also, I wanted to remove my real Email address from GitHub and use a no-reply Em
 
 ![Yubikey 5 NFC](../assets/images/post_2022-11_yubikey_5nfc_hero_2021.png)
 
-I have two [Yubikey 5 NFC](https://www.yubico.com/nl/product/yubikey-5-nfc/) keys for which I have one always wtih me on my keyring and a spare one at home in a safe place (like your house and car, you should always have a spare key)
+I have two [Yubikey 5 NFC](https://www.yubico.com/nl/product/yubikey-5-nfc/) keys for which I have one always with me on my keyring and a spare one at home in a safe place (like your house and car, you should always have a spare key)
 
 ## Requirements
 
@@ -40,7 +40,7 @@ To generate a [no-reply Email address in GitHub](https://docs.github.com/en/acco
 1. Go to your Settings in GitHub
 2. Under Emails make sure you have a primary Email address that's verified
 3. Select the check box ***Keep my email addresses private***. This will generate a no reply Email address.
-4. Make a note of the no reply Email adress and continue to the next step
+4. Make a note of the no reply Email address and continue to the next step
 
 ### 2 Install gpg4win
 
